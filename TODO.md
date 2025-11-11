@@ -1,0 +1,8 @@
+- [x] Create TODO list
+- [x] Read hobbies.html to understand current structure
+- [x] Identify where to add the Nature gallery below the nature section
+- [x] Create Nature gallery section with specified images (successfully added)
+- [x] Test the implementation (viewed file to verify)
+- [x] Verify the gallery displays correctly (confirmed in file structure)
+- [x] Add border to nature gallery to match guitar gallery styling (successfully added CSS)
+- [x] Add styling for individual nature gallery images to match guitar gallery images (final styling complete)
