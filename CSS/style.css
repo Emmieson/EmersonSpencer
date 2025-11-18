@@ -703,3 +703,232 @@ footer {
     margin-top: 4rem;
     border-top: 3px solid var(--secondary-color);
 }
+
+/* ===== GUITAR GALLERY STYLING ===== */
+.guitar-gallery-section {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--light-tan), #FDF5E6);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(139, 69, 19, 0.15);
+    border-left: 5px solid var(--secondary-color);
+    border: 1px solid rgba(139, 69, 19, 0.2);
+}
+
+.guitar-gallery-section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.photo-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.guitar-gallery-section .gallery-item {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+    flex-shrink: 0;
+}
+
+.guitar-gallery-section .gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-image {
+    width: auto;
+    height: auto;
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+/* ===== NATURE GALLERY STYLING ===== */
+.nature-gallery-section {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--light-tan), #FDF5E6);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(139, 69, 19, 0.15);
+    border-left: 5px solid var(--secondary-color);
+    border: 1px solid rgba(139, 69, 19, 0.2);
+}
+
+.nature-gallery-section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.nature-gallery-section .gallery-item {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+    flex-shrink: 0;
+}
+
+.nature-gallery-section .gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.nature-gallery-section .gallery-image {
+    width: auto;
+    height: auto;
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+/* Responsive adjustments for gallery */
+@media screen and (max-width: 1200px) {
+    .photo-gallery {
+        flex-wrap: wrap;
+    }
+    
+    .gallery-image {
+        max-width: 250px;
+        max-height: 250px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .photo-gallery {
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .gallery-image {
+        max-width: 200px;
+        max-height: 200px;
+    }
+}
+
+/* ===== CAREER PAGE STYLING ===== */
+.career-section {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--light-tan), #FDF5E6);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(139, 69, 19, 0.15);
+    border-left: 5px solid var(--secondary-color);
+    border: 1px solid rgba(139, 69, 19, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.career-section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.career-content {
+    text-align: center;
+}
+
+.career-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.career-content > p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.video-item {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.video-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.video-item .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.video-item .video-container .youtube-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.video-description {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    text-align: center;
+    font-style: italic;
+    margin: 0;
+    padding-top: 0.5rem;
+}
+
+/* Career page responsive design */
+@media screen and (max-width: 768px) {
+    .career-section {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .career-content h2 {
+        font-size: 2rem;
+    }
+    
+    .video-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .video-item {
+        padding: 1rem;
+    }
+    
+    .video-item h3 {
+        font-size: 1.3rem;
+    }
+}
