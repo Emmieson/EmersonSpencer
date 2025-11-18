@@ -704,6 +704,215 @@ footer {
     border-top: 3px solid var(--secondary-color);
 }
 
+/* ===== AIM TRAINING GAME ===== */
+main.game {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.scoreboard .card {
+    background: linear-gradient(135deg, var(--light-tan), #FDF5E6);
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.15);
+    border: 1px solid rgba(139, 69, 19, 0.2);
+    min-width: 120px;
+}
+
+.scoreboard .card h3 {
+    color: var(--primary-color);
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.scoreboard .card div {
+    color: var(--text-color);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.btn {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+    transition: all 0.3s ease;
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.btn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.play-area {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: url('../Images/Lake.jpg') center center / cover no-repeat;
+    border: 3px solid var(--primary-color);
+    border-radius: 15px;
+    margin: 2rem auto;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.target {
+    position: absolute;
+    background: #6B6B6B; /* Default grey, will be overridden by JS */
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    cursor: crosshair;
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.5),
+        inset 0 2px 5px rgba(255, 255, 255, 0.1),
+        inset 0 -2px 5px rgba(0, 0, 0, 0.3),
+        /* Texture shadows for depth */
+        inset 1px 1px 0 rgba(255, 255, 255, 0.05),
+        inset -1px -1px 0 rgba(0, 0, 0, 0.2),
+        inset 2px 2px 2px rgba(0, 0, 0, 0.1),
+        inset -2px -2px 2px rgba(0, 0, 0, 0.15);
+    transition: transform 0.1s ease;
+    z-index: 10;
+    /* Add texture pattern */
+    background-image: 
+        /* Subtle noise/dots pattern */
+        radial-gradient(circle at 25% 25%, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+        radial-gradient(circle at 75% 75%, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        /* Surface highlights */
+        radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(0, 0, 0, 0.1) 0%, transparent 50%);
+    background-size: 
+        8px 8px,
+        6px 6px,
+        10px 10px,
+        40% 40%,
+        35% 35%;
+    background-position: 
+        0 0,
+        4px 4px,
+        2px 2px,
+        0 0,
+        0 0;
+}
+
+.target:hover {
+    transform: scale(1.1);
+    box-shadow: 
+        0 6px 20px rgba(0, 0, 0, 0.6),
+        inset 0 2px 5px rgba(255, 255, 255, 0.15),
+        inset 0 -2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.target.hit {
+    background: #8B9A5B !important; /* Green when hit */
+    border-color: #5A6A3A;
+    opacity: 0.9;
+    box-shadow: 
+        0 6px 20px rgba(139, 154, 91, 0.6),
+        inset 0 2px 5px rgba(255, 255, 255, 0.2);
+}
+
+.game-results {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, var(--light-tan), #FDF5E6);
+    padding: 2rem 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 3px solid var(--primary-color);
+    z-index: 100;
+    text-align: center;
+}
+
+.game-results h3 {
+    color: var(--primary-color);
+    margin: 0 0 1rem 0;
+    font-size: 2rem;
+}
+
+.game-results p {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.game-results .new-best {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+main.game .card {
+    background: linear-gradient(135deg, var(--light-tan), #FDF5E6);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.15);
+    border: 1px solid rgba(139, 69, 19, 0.2);
+    margin: 2rem auto;
+    max-width: 600px;
+    color: var(--text-color);
+    line-height: 1.8;
+}
+
+/* Game responsive design */
+@media screen and (max-width: 768px) {
+    .play-area {
+        height: 400px;
+    }
+    
+    .scoreboard {
+        gap: 1rem;
+    }
+    
+    .scoreboard .card {
+        padding: 1rem 1.5rem;
+        min-width: 100px;
+    }
+    
+    .scoreboard .card div {
+        font-size: 1.5rem;
+    }
+    
+    .game-results {
+        padding: 1.5rem 2rem;
+        width: 90%;
+    }
+    
+    .game-results h3 {
+        font-size: 1.5rem;
+    }
+    
+    .game-results p {
+        font-size: 1rem;
+    }
+}
+
 /* ===== GUITAR GALLERY STYLING ===== */
 .guitar-gallery-section {
     margin-bottom: 4rem;
